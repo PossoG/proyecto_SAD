@@ -1,0 +1,15 @@
+{# usuarios/templates/usuarios/profile_edit.html #}
+{% extends 'base.html' %}
+
+
+{% block title %}Editar Perfil{% endblock %}
+
+{% block content %}
+<h2>Editar mi Perfil</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar Cambios</button>
+</form>
+<p><a href="{% url 'usuarios:profile_delete' %}">Eliminar mi cuenta</a></p>
+{% endblock %}

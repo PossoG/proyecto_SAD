@@ -1,0 +1,15 @@
+{# usuarios/templates/usuarios/signup.html #}
+{% extends 'base.html' %}
+
+
+{% block title %}Registro de Usuario{% endblock %}
+
+{% block content %}
+<h2>Registrarse</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Registrarse</button>
+</form>
+<p>¿Ya tienes cuenta? <a href="{% url 'usuarios:login' %}">Iniciar Sesión</a></p>
+{% endblock %}

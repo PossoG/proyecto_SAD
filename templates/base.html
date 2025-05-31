@@ -1,0 +1,41 @@
+{# templates/base.html #}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}SAD Clínica Dental{% endblock %}</title>
+    <!-- Aquí puedes enlazar tus archivos estáticos (CSS, JS) si los tienes -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}"> 
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'usuarios:signup' %}">Registrarse</a></li>
+                <li><a href="{% url 'usuarios:login' %}">Iniciar Sesión</a></li>
+                <!-- Si tienes más enlaces (home, citas, etc.), agrégalos aquí -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% block content %}
+        <!-- Aquí irán los contenidos específicos de cada vista -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SAD Clínica Dental</p>
+    </footer>
+</body>
+</html>

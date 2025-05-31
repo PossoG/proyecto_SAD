@@ -1,0 +1,61 @@
+# -------------------------------------------------------
+# Ignorar el entorno virtual
+# -------------------------------------------------------
+venv/
+env/
+.venv/
+
+# -------------------------------------------------------
+# Ignorar bytecode de Python, caches y logs
+# -------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+
+# -------------------------------------------------------
+# Ignorar la base de datos SQLite (si la estás usando localmente)
+# -------------------------------------------------------
+*.sqlite3
+db.sqlite3
+
+# -------------------------------------------------------
+# (Opcional) Ignorar migraciones si no las quieres versionar –
+# pero se recomienda incluirlas para que todos tengan el mismo esquema
+# -------------------------------------------------------
+# */migrations/
+# !*/migrations/__init__.py
+
+# -------------------------------------------------------
+# Ignorar archivos estáticos recopilados
+# -------------------------------------------------------
+staticfiles/
+# /static/
+
+# -------------------------------------------------------
+# Ignorar archivos de media/subidas de usuario
+# -------------------------------------------------------
+media/
+
+# -------------------------------------------------------
+# Archivos de configuración de IDEs y editores
+# -------------------------------------------------------
+.vscode/
+.idea/
+*.suo
+*.swp
+*.user
+*.tmp
+*.bak
+
+# -------------------------------------------------------
+# Archivos de sistema (Windows, macOS)
+# -------------------------------------------------------
+Thumbs.db
+.DS_Store
+
+# -------------------------------------------------------
+# Archivos de variables de entorno o configuraciones locales
+# -------------------------------------------------------
+.env
+local_settings.py

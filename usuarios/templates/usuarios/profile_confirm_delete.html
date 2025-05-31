@@ -1,0 +1,14 @@
+{# usuarios/templates/usuarios/profile_confirm_delete.html #}
+{% extends 'base.html' %}
+
+
+{% block title %}Confirmar Eliminación{% endblock %}
+
+{% block content %}
+<h2>¿Estás seguro de que deseas eliminar tu cuenta?</h2>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Sí, eliminar mi cuenta</button>
+    <a href="{% url 'core:home' %}">Cancelar</a>
+</form>
+{% endblock %}

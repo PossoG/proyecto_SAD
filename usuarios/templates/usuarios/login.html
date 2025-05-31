@@ -1,0 +1,15 @@
+{# usuarios/templates/usuarios/login.html #}
+{% extends 'base.html' %}
+
+
+{% block title %}Iniciar Sesión{% endblock %}
+
+{% block content %}
+<h2>Iniciar Sesión</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Ingresar</button>
+</form>
+<p>¿No tienes cuenta? <a href="{% url 'usuarios:signup' %}">Regístrate</a></p>
+{% endblock %}
