@@ -43,10 +43,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'usuarios',
+    'core',
     
 ]
 
 AUTH_USER_MODEL = 'usuarios.User'
+
+# URL de redirección después del login/logout
+LOGIN_REDIRECT_URL = 'usuarios:profile_edit'
+LOGOUT_REDIRECT_URL = 'usuarios:login'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
