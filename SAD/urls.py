@@ -17,11 +17,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+# Importa la vista que renderiza primera_vista.html
+from bienvenido import views as bienvenido_views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     
+    # Ruta raíz → primera_vista
+    # Al ir a http://127.0.0.1:8000/ cargará primera_vista.html
+    path('', bienvenido_views.primera_vista, name='primera_vista'),
+    
     # Aquí incluimos todas las URLs que empiecen con /accounts/
     path('accounts/', include('usuarios.urls', namespace='usuarios')),
+    
+    # Ahora montamos la app "bienvenido" en /bienvenido/
+    path('bienvenido/', include('bienvenido.urls', namespace='bienvenido')),
+    
 
     # Si luego agregas otras apps, las incluirías igual:
     # path('citas/', include('citas.urls', namespace='citas')),

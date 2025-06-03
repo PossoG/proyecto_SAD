@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bienvenido al SAD</title>
+    <link rel="stylesheet" href="{% static 'bienvenido/css/estilos.css' %}" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-panel">
+        <nav class="navbar">
+          <a href="#">Home</a>
+          <a href="#">Testimonios</a>
+          <a href="#">Dentistas</a>
+          <a href="#">Sobre nosotros</a>
+        </nav>
+
+        <!-- Nuevo bloque centrado -->
+        <div class="info-usuario">
+          <h1><span class="titulo-ovalado2">Bienvenido al SAD</span></h1>
+          <img id="welcome-avatar" src="{% static 'bienvenido/img/default.png' %}" alt="Avatar">
+
+          <p>Pepito Pérez Rodríguez</p>
+        </div>
+
+        <!-- Menú -->
+        <ul class="menu">
+          <li><a href="{% url 'bienvenido:citas' %}" target="_blank" rel="noopener noreferrer"><span class="icon">🗓️</span> Cita Médica</a></li>
+          <li><a href="{% url 'bienvenido:resultados' %}" target="_blank" rel="noopener noreferrer"><span class="icon">📊</span> Ver Resultados del Laboratorio</a></li>
+          <li><span class="icon">🏥</span> Historial Clínico</li>
+          <li><span class="icon">🔔</span> Notificaciones</li>
+          <li><span class="icon">👤</span> Perfil de Usuario</li>
+          <li><span class="icon">💲</span> Servicios y Precios</li>
+          <li><span class="icon">🎧</span> Soporte</li>
+          <li><span class="icon">❌</span> Cerrar sesión</li>
+        </ul>
+      </div>
+      <div class="right-panel">
+        <div class="header">
+            <h2><span class="titulo-ovalado">BIENVENIDO AL SAD</span></h2>
+            <img src="{% static 'bienvenido/img/logoSAD.png' %}" alt="Logo SAD" class="logo"/>
+        </div>
+        <div class="imagen-derecha">
+          <img src="{% static 'bienvenido/img/clinica.png' %}" alt="Descripción de la imagen">
+        </div>
+        <footer>
+            © 2025 Sistema de Agendamiento Dental S.A.D. Todos los derechos reservados.
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
