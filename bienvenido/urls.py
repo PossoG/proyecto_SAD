@@ -14,4 +14,10 @@ urlpatterns = [
     path('cancelar-cita/', views.cancelar_cita, name='cancelar-cita'),
     path('reprogramar-cita1/', views.reprogramar_cita1, name='reprogramar-cita1'),
     path('reprogramar-cita2/', views.reprogramar_cita2, name='reprogramar-cita2'),
+    path('historial-clinico/', views.historial_clinico, name='historial-clinico'),
+    path('notificacion/', views.notificacion, name='notificacion'),
+    path('perfil-usuario/', views.perfil_usuario, name='perfil-usuario'),
+    path('perfil-usuario-editar/', views.perfil_usuario_editar, name='perfil-usuario-editar'),
+    path('gestionar-familiares/', views.gestionar_familiares, name='gestionar-familiares'),
+    
 ]

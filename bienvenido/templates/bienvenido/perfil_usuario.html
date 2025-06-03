@@ -4,8 +4,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cita Médica SAD</title>
-    <link rel="stylesheet" href="{% static 'bienvenido/css/estilos_reprogramar2.css' %}" />
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="{% static 'bienvenido/css/perfil_usuario.css' %}" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   </head>
   <body>
@@ -44,32 +44,37 @@
         </div>
         <div class="main-content">
             <div class="menu-citas">
-                <div class="menu-citas-header">Menú de Citas Médicas</div>
-                <div class="menu-citas-opciones">
-                    <div class="opcion"><span class="icono">📅</span><span class="texto"><a href="{% url 'bienvenido:agendar-cita' %}" target="_self">Agendar</a></span></div>
-                    <div class="opcion"><span class="icono">🔍</span><span class="texto"><a href="{% url 'bienvenido:consultar-cita' %}" target="_self">Consultar</a></span></div>
-                    <div class="opcion"><span class="icono">❌</span><span class="texto"><a href="{% url 'bienvenido:cancelar-cita' %}" target="_self">Cancelar</a></span></div>
-                    <div class="opcion"><span class="icono">🔄</span><span class="texto"><a href="{% url 'bienvenido:reprogramar-cita1' %}" target="_self">Reprogramar</a></span></div>
-                </div>
+                <div class="menu-citas-header">Perfil de Usuario</div>
             </div>
-        </div>
-        <div class="contenedor-reprogramar">
-          <!-- Nueva Fecha -->
-          <h3 class="tituloovaladonegro1">Nueva Fecha Cita</h3>
-          <input type="date" class="input-reprogramar" placeholder="Día/Mes/Año">
-          <!-- Nueva Hora -->
-          <h3 class="tituloovaladonegro2">Nueva Hora Cita</h3>
-          <input type="time" class="input-reprogramar" placeholder="Hora">
-          <!-- Nuevo Dentista -->
-          <h3 class="tituloovaladonegro3">Nuevo Dentista</h3>
-          <select class="input-reprogramar">
-            <option disabled selected>Seleccione un dentista</option>
-            <option>Dr. Juan Pérez</option>
-            <option>Dra. Camila Gómez</option>
-            <option>Dr. Mario López</option>
-          </select>
-          <!-- Botón Reprogramar -->
-          <button class="btn-reprogramar">REPROGRAMAR CITA</button>
+            <div class="perfil-contenedor-scrollable">
+              <form class="perfil-formulario">
+
+                <h4 class="titulo-ovalado3">ID DEL PACIENTE</h4>
+                <input type="text" value="Identificación del paciente (Solo Lectura)" readonly>
+
+                <h4 class="titulo-ovalado3">NOMBRES</h4>
+                <input type="text" value="Nombre(s) (Solo Lectura)" readonly>
+
+                <h4 class="titulo-ovalado3">PRIMER APELLIDO</h4>
+                <input type="text" value="Primer Apellido (Solo Lectura)" readonly>
+
+                <h4 class="titulo-ovalado3">SEGUNDO APELLIDO</h4>
+                <input type="text" value="Segundo Apellido (Solo Lectura)" readonly>
+
+                <h4 class="titulo-ovalado3">CORREO ELECTRÓNICO</h4>
+                <input type="email" value="Correo Electrónico (Solo Lectura)" readonly>
+
+                <h4 class="titulo-ovalado3">TELÉFONO</h4>
+                <input type="text" value="Teléfono (Solo Lectura)" readonly>
+
+              </form>
+            </div>
+            <div class="boton-editar-container">
+              <button class="btn-editar"><a href="{% url 'bienvenido:perfil-usuario-editar' %}" target="_self">Editar</a></button>
+            </div>
+            <div class="boton-editar-container">
+              <button class="btn-editar"><a href="{% url 'bienvenido:gestionar-familiares' %}" target="_self">Gestionar Familiares</a></button>
+            </div>
         </div>
         <footer>
             © 2025 Sistema de Agendamiento Dental S.A.D. Todos los derechos reservados.

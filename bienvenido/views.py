@@ -31,3 +31,18 @@ def reprogramar_cita1(request):
 
 def reprogramar_cita2(request):
     return render(request, 'bienvenido/reprogramar2.html')
+
+def historial_clinico(request):
+    return render(request, 'bienvenido/historial_clinico.html')
+
+def notificacion(request):
+    return render(request, 'bienvenido/Notificaciones.html')
+
+def perfil_usuario(request):
+    return render(request, 'bienvenido/perfil_usuario.html')
+
+def perfil_usuario_editar(request):
+    return render(request, 'bienvenido/perfil_usuario_editar.html')
+
+def gestionar_familiares(request):
+    return render(request, 'bienvenido/gestionar_familiares.html')
