@@ -11,30 +11,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Leer la variable de entorno DATABASE_URL (puede ser None)
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-if DATABASE_URL:
-    # Solo parsear si existe DATABASE_URL
-    tmpPostgres = urlparse(DATABASE_URL)
-    # tmpPostgres.path es de tipo bytes (p. ej. b'/nombre_bd')
-    # Convertir a str y quitar la barra inicial
-    db_name = tmpPostgres.path.decode('utf-8').lstrip('/')
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': db_name,
-            'USER': tmpPostgres.username,
-            'PASSWORD': tmpPostgres.password,
-            'HOST': tmpPostgres.hostname,
-            'PORT': tmpPostgres.port or 5432,
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'SAD',
+        'USER': 'SAD_owner',
+        'PASSWORD': 'npg_AsH5znUt9irJ',
+        'HOST': 'ep-small-rain-a8ndtkvu-pooler.eastus2.azure.neon.tech',
+        'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',
+        },     
     }
-else:
-    # Si no hay DATABASE_URL, usar SQLite en desarrollo local
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
+}
+
 
 
 # --------------------------------------------------------------------------------
@@ -63,6 +53,7 @@ INSTALLED_APPS = [
 
     'usuarios',
     'bienvenido',
+    'doctores',
 ]
 
 AUTH_USER_MODEL = 'usuarios.User'

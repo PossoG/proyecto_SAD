@@ -33,6 +33,9 @@ urlpatterns = [
     # Ahora montamos la app "bienvenido" en /bienvenido/
     path('bienvenido/', include('bienvenido.urls', namespace='bienvenido')),
     
+    # App “doctores” en /doctores/
+    path('doctores/', include('doctores.urls', namespace='doctores')),
+    
 
     # Si luego agregas otras apps, las incluirías igual:
     # path('citas/', include('citas.urls', namespace='citas')),
