@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recuperar Sesión - SAD</title>
+    <link rel="stylesheet" href="{% static 'bienvenido/css/estilos_nico_2.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container-total">
+      <div class="panel">
+        <div class="header" , style="margin-left: 100px">
+          <h1><span>Recuperación de tu contraseña</span></h1>
+          <img id="welcome-avatar" src="{% static 'bienvenido/img/default.png' %}" alt="Avatar">
+        </div>
+        <div
+          style="
+            margin-top: 0px;
+            margin-left: 100px;
+            border-bottom: 1px solid #fffcf7;
+          ">
+          <p>Recupera tu contraseña ingresando tu correo electrónico.</p>
+        </div>
+        <div class="formulario", style="margin-left: 100px; margin-top: 100px;">
+          <form>
+            <label for="usuario">Correo:</label>
+            <input
+            style="margin-left: 130px;"
+              type="email"
+              id="correo"
+              name="Correo"
+              placeholder="Email" />
+            <button type="submit" class="btn-tres", style="margin-top: 80px;">Enviar correo</button>
+          </form>
+          <p style="margin-left: 100px;">
+            ¿Ya tienes una cuenta?
+            <button class="btn-acceso"><a href="{% url 'bienvenido:inicio-sesion' %}" target="_blank" rel="noopener noreferrer">Iniciar Sesión</a></button>
+        </p>
+          <p style="margin-top: 20px; margin-left: 100px;">
+            ¿Aún no tienes una cuenta? <a href="{% url 'bienvenido:crear-cuenta' %}" target="_blank" rel="noopener noreferrer">Registrarse</a>
+            </p>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <footer>
+        © 2025 Sistema de Agendamiento Dental S.A.D. Todos los derechos
+        reservados.
+      </footer>
+    </div>
+  </body>
+</html>

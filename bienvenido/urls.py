@@ -19,5 +19,7 @@ urlpatterns = [
     path('perfil-usuario/', views.perfil_usuario, name='perfil-usuario'),
     path('perfil-usuario-editar/', views.perfil_usuario_editar, name='perfil-usuario-editar'),
     path('gestionar-familiares/', views.gestionar_familiares, name='gestionar-familiares'),
+    path('inicio-sesion/', views.inicio_sesion, name='inicio-sesion'),
+    path('recuperacion-cuenta/', views.recuperacion_cuenta, name='recuperacion-cuenta'),
     
 ]

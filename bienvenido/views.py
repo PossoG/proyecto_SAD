@@ -46,3 +46,9 @@ def perfil_usuario_editar(request):
 
 def gestionar_familiares(request):
     return render(request, 'bienvenido/gestionar_familiares.html')
+
+def inicio_sesion(request):
+    return render(request, 'bienvenido/InicioSesion.html')
+
+def recuperacion_cuenta(request):
+    return render(request, 'bienvenido/Recuperacion.html')
