@@ -18,10 +18,15 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+
+    # Página de inicio
+    path('', include('core.urls', namespace='core')),
     path('admin/', admin.site.urls),
     
     # Aquí incluimos todas las URLs que empiecen con /accounts/
     path('accounts/', include('usuarios.urls', namespace='usuarios')),
+    path('citas/', include('citas.urls', namespace='citas')),
+    path('pacientes/', include('pacientes.urls', namespace='pacientes'))
 
     # Si luego agregas otras apps, las incluirías igual:
     # path('citas/', include('citas.urls', namespace='citas')),
