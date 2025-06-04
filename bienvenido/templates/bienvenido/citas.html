@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cita Médica SAD</title>
+    <link rel="stylesheet" href="{% static 'bienvenido/css/estilos_citas.css' %}" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-panel">
+        <nav class="navbar">
+          <a href="#">Home</a>
+          <a href="#">Testimonios</a>
+          <a href="#">Dentistas</a>
+          <a href="#">Sobre nosotros</a>
+        </nav>
+
+        <!-- Nuevo bloque centrado -->
+        <div class="info-usuario">
+          <h1><span class="titulo-ovalado2">Bienvenido al SAD</span></h1>
+          <img id="welcome-avatar" src="{% static 'bienvenido/img/default.png' %}" alt="Avatar">
+          <p>Pepito Pérez Rodríguez</p>
+        </div>
+
+        <!-- Menú -->
+        <ul class="menu">
+          <li><a href="{% url 'bienvenido:citas' %}" target="_blank" rel="noopener noreferrer"><span class="icon">🗓️</span> Cita Médica</a></li>
+          <li><a href="{% url 'bienvenido:resultados' %}" target="_blank" rel="noopener noreferrer"><span class="icon">📊</span> Ver Resultados del Laboratorio</a></li>
+          <li><a href="{% url 'bienvenido:historial-clinico' %}" target="_blank" rel="noopener noreferrer"><span class="icon">🏥</span> Historial Clínico</a></li>
+          <li><a href="{% url 'bienvenido:notificacion' %}" target="_blank" rel="noopener noreferrer"><span class="icon">🔔</span> Notificaciones</a></li>
+          <li><a href="{% url 'bienvenido:perfil-usuario' %}" target="_blank" rel="noopener noreferrer"><span class="icon">👤</span> Perfil de Usuario</a></li>
+          <li><span class="icon">💲</span> Servicios y Precios</li>
+          <li><span class="icon">🎧</span> Soporte</li>
+          <li class="cerrar"><span class="icon">❌</span> Cerrar sesión</li>
+        </ul>
+      </div>
+      <div class="right-panel">
+        <div class="header">
+            <h2><span class="titulo-ovalado">BIENVENIDO AL SAD</span></h2>
+            <img src="{% static 'bienvenido/img/logoSAD.png' %}" alt="Logo SAD" class="logo"/>
+        </div>
+        <div class="main-content">
+            <div class="menu-citas">
+                <div class="menu-citas-header">Menú de Citas Médicas</div>
+                <div class="menu-citas-opciones">
+                    <div class="opcion"><span class="icono">📅</span><span class="texto"><a href="{% url 'bienvenido:agendar-cita' %}" target="_self">Agendar</a></span></div>
+                    <div class="opcion"><span class="icono">🔍</span><span class="texto"><a href="{% url 'bienvenido:consultar-cita' %}" target="_self">Consultar</a></span></div>
+                    <div class="opcion"><span class="icono">❌</span><span class="texto"><a href="{% url 'bienvenido:cancelar-cita' %}" target="_self">Cancelar</a></span></div>
+                    <div class="opcion"><span class="icono">🔄</span><span class="texto"><a href="{% url 'bienvenido:reprogramar-cita1' %}" target="_self">Reprogramar</a></span></div>
+                </div>
+            </div>
+            <div class="panel-formulario">
+                <p style="text-align:center;"></p>
+            </div>
+        </div>
+        <footer>
+            © 2025 Sistema de Agendamiento Dental S.A.D. Todos los derechos reservados.
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
