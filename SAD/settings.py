@@ -45,10 +45,16 @@ INSTALLED_APPS = [
     'usuarios',
     'citas',
     'pacientes',
+    'core',
     
 ]
 
 AUTH_USER_MODEL = 'usuarios.User'
+
+# URL de redirección después del login/logout
+LOGIN_REDIRECT_URL = 'usuarios:profile_edit'
+LOGOUT_REDIRECT_URL = 'usuarios:login'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

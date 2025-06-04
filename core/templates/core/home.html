@@ -1,0 +1,14 @@
+{# core/templates/core/home.html #}
+{% extends 'base.html' %}
+
+{% block title %}Inicio - SAD Clínica Dental{% endblock %}
+
+{% block content %}
+<div style="text-align:center; margin-top:2rem;">
+    <h1>Bienvenido al Sistema de Agendamiento Dental (SAD)</h1>
+    <p>
+      <a href="{% url 'usuarios:signup' %}">Registrarse</a> |
+      <a href="{% url 'usuarios:login' %}">Iniciar Sesión</a>
+    </p>
+</div>
+{% endblock %}
