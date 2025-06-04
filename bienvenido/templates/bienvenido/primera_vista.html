@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cita Médica SAD</title>
+    <link rel="stylesheet" href="{% static 'bienvenido/css/estilos_primera_vista.css' %}" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-panel">
+        <nav class="navbar">
+          <a href="#">Home</a>
+          <a href="#">Testimonios</a>
+          <a href="#">Dentistas</a>
+          <a href="#">Sobre nosotros</a>
+        </nav>
+        <div class="info-contacto">
+          <h1 class="titulo-bienvenida">BIENVENIDO</h1>
+          <p>Cuidamos de tu sonrisa con la mejor tecnología y un equipo de profesionales.</p>
+
+          <ul class="contacto-lista">
+            <li>
+              <span class="icono">📞</span>
+              <strong>Teléfono</strong><br>
+              <span class="info">555-123-4567</span>
+            </li>
+            <li>
+              <span class="icono">🌐</span>
+              <strong>Sitio Web</strong><br>
+              <span class="info">www.sadental.com</span>
+            </li>
+            <li>
+              <span class="icono">✉️</span>
+              <strong>E-Mail</strong><br>
+              <span class="info">info@sadental.com</span>
+            </li>
+            <li>
+              <span class="icono">📍</span>
+              <strong>Dirección</strong><br>
+              <span class="info">123 Anywhere St., Any City</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="right-panel">
+        <div class="header">
+            <h2><span class="titulo-ovalado">BIENVENIDO AL SAD</span></h2>
+            <img src="{% static 'bienvenido/img/logoSAD.png' %}" alt="Logo SAD" class="logo"/>
+        </div>
+        <div class="main-content">
+          <div class="opcion-inicio">
+            <h4 class="titulo-ovalado3">¿Ya tienes una cuenta?</h4>
+            <button class="btn-acceso"><a href="{% url 'bienvenido:inicio-sesion' %}" target="_blank" rel="noopener noreferrer">Iniciar Sesión</a></button>
+          </div>
+
+          <div class="opcion-inicio">
+            <h4 class="titulo-ovalado3">Aún no estoy registrado(a)</h4>
+            <button class="btn-acceso"><a href="{% url 'bienvenido:crear-cuenta' %}" target="_blank" rel="noopener noreferrer">Registrarse</a></button>
+          </div>
+
+          <img src="{% static 'bienvenido/img/clinica.png' %}" alt="Imagen de bienvenida" class="imagen-bienvenida">
+
+
+        </div>
+        <footer>
+            © 2025 Sistema de Agendamiento Dental S.A.D. Todos los derechos reservados.
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
