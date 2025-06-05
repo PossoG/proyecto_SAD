@@ -1,0 +1,29 @@
+<!-- proyecto_SAD/templates/citas/crear_cita.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Crear Cita</title>
+</head>
+<body>
+  <h1>Agendar Nueva Cita</h1>
+
+  <!-- Si solo quieres verificar que Django carga la plantilla, puedes dejar un mensaje fijo: -->
+  <p>¡Hola! Esta es una plantilla de prueba para “Crear Cita”.</p>
+
+  <!-- Si ya tienes el formulario en el contexto, muestra sus campos: -->
+  {% if form %}
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Guardar cita</button>
+    </form>
+  {% else %}
+    <p>(Aquí iría el formulario si lo pasas en el contexto)</p>
+  {% endif %}
+
+  <hr>
+  <a href="{% url 'citas:mis_citas' %}">← Volver a Mis Citas</a>
+</body>
+</html>

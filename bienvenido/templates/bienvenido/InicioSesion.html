@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión - SAD</title>
+    <link rel="stylesheet" href="{% static 'bienvenido/css/estilos_nico_2.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container-total">
+      <div class="panel">
+        <div class="header" , style="margin-left: 100px">
+          <h1><span>Iniciar Sesión</span></h1>
+          <img id="welcome-avatar" src="{% static 'bienvenido/img/default.png' %}" alt="Avatar">
+        </div>
+        <div
+          style="
+            margin-top: 0px;
+            margin-left: 100px;
+            border-bottom: 1px solid #fffcf7;
+          ">
+          <p>Bienvenido.</p>
+          <p>Inicia sesión con tus credenciales</p>
+        </div>
+        <div class="formulario", style="margin-left: 100px; margin-top: 100px;">
+          <form>
+            <label for="usuario">Usuario:</label>
+            <input
+            style="margin-left: 130px;"
+              type="text"
+              id="usuario"
+              name="usuario"
+              placeholder="Ingresa tu usuario" />
+            <br />
+            <br />
+            <label for="contrasena">Contraseña:</label>
+            <input 
+            style="margin-left: 100px;"
+              type="password"
+              id="contrasena"
+              name="contrasena"
+              placeholder="Ingresa tu contraseña" />
+            <br />
+            <br />
+            <p style="margin-left: 100px;">
+                <a href="{% url 'bienvenido:recuperacion-cuenta' %}" target="_blank" rel="noopener noreferrer">¿Olvidaste tu contraseña?</a>
+            </p>
+            <button type="submit" class="btn-tres", style="margin-top: 100px;">Iniciar Sesión</button>
+          </form>
+          <p style="margin-top: 20px;">
+            ¿No tienes una cuenta? <a href="{% url 'bienvenido:crear-cuenta' %}" target="_blank" rel="noopener noreferrer">Registrarse</a>
+            </p>
+      </div>
+      <footer>
+        © 2025 Sistema de Agendamiento Dental S.A.D. Todos los derechos
+        reservados.
+      </footer>
+    </div>
+  </body>
+</html>

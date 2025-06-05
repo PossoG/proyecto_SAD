@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro - S.A.D.</title>
+    <link rel="stylesheet" href="{% static 'bienvenido/css/estilos_cuenta.css' %}" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-panel">
+        <nav class="navbar">
+          <a href="#">Home</a>
+          <a href="#">Testimonios</a>
+          <a href="#">Dentistas</a>
+          <a href="#">Sobre nosotros</a>
+        </nav>
+        <div class="left-content">
+          <h1>CREAR UNA CUENTA</h1>
+          <p>Regístrate con tus datos personales</p>
+          <img src="{% static 'bienvenido/img/personafeliz.png' %}" alt="persona feliz" class="imagen-feliz"/>
+        </div>
+      </div>
+      <div class="right-panel">
+        <div class="header">
+          <h2><span class="titulo-ovalado">BIENVENIDO AL SAD</span></h2>
+          <img src="{% static 'bienvenido/img/logoSAD.png' %}" alt="Logo SAD" class="logo"/>
+        </div>
+        <form class="formulario">
+          <div>
+            <label for="nombres">Nombres:</label>
+            <input type="text" id="nombres" placeholder="Nombre completo" />
+          </div>
+
+          <div>
+            <label for="apellido1">Primer Apellido:</label>
+            <input type="text" id="apellido1" placeholder="Primer Apellido" />
+          </div>
+
+          <div>
+            <label for="apellido2">Segundo Apellido:</label>
+            <input type="text" id="apellido2" placeholder="Segundo Apellido" />
+          </div>
+
+          <div>
+            <label for="tipo-id">Tipo de Identificación:</label>
+            <select id="tipo-id">
+              <option disabled selected>Tipo de Identificación</option>
+              <option>C.C.</option>
+              <option>C.E.</option>
+              <option>PPT</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="identificacion">Identificación:</label>
+            <input type="text" id="identificacion" placeholder="Identificación" />
+          </div>
+
+          <div>
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" placeholder="Email" />
+          </div>
+
+          <div>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" placeholder="Password" />
+          </div>
+
+          <button type="submit">Registrarse</button>
+        </form>
+        <footer>
+          © 2025 Sistema de Agendamiento Dental S.A.D. Todos los derechos reservados.
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
