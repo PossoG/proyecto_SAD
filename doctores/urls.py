@@ -8,6 +8,8 @@ app_name = 'doctores'
 urlpatterns = [
     # Al acceder a /doctores/ (prefijo definido en SAD/urls.py), Django llamará a views.index
     path('', views.index, name='index'),
+    path('historial_clinico_doctor/', views.historial_clinico_doctor, name='historial_clinico_doctor'),
+    
     
     
     

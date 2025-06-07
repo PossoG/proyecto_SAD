@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventario Alertas</title>
+  <link rel="stylesheet" href="{% static 'administradores/css/inventario_alertas.css' %}" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <!-- Panel izquierdo -->
+    <div class="left-panel">
+      <nav class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Testimonios</a>
+        <a href="#">Dentistas</a>
+        <a href="#">Sobre nosotros</a>
+      </nav>
+
+      <div class="info-usuario">
+        <h1><span class="titulo-ovalado2">Bienvenido al SAD</span></h1>
+        <img id="welcome-avatar" src="{% static 'bienvenido/img/default.png' %}" alt="Avatar">
+        <p>Administrador</p>
+      </div>
+
+      <ul class="menu">
+        <li><a href="{% url 'administradores:index' %}" target="_blank" rel="noopener noreferrer"><span class="icon">📅</span> Cita Médica</a></li>
+        <li><a href="{% url 'administradores:inventario-registrar'%}" target="_blank" rel="noopener noreferrer"><span class="icon">📋</span> Inventario</a></li>
+        <li><a href="{% url 'administradores:proveedores-registrar' %}" target="_blank"><span class="icon">🏬</span> Proveedores</a></li>
+        <li><span class="icon">🔔</span> Recordatorios</li>
+        <li><span class="icon">📈</span> Reporte</li>
+        <li><span class="icon">👤</span> Perfil de Usuario</li>
+        <li><span class="icon">👥</span> Colaboradores</li>
+        <li><span class="icon">🛠️</span> Soporte</li>
+        <li class="cerrar"><span class="icon">❌</span> Cerrar sesión</li>
+      </ul>
+    </div>
+
+    <!-- Panel derecho -->
+    <div class="right-panel">
+      <div class="header">
+        <h2><span class="titulo-ovalado">BIENVENIDO AL SAD</span></h2>
+        <img src="{% static 'bienvenido/img/logoSAD.png' %}" alt="Logo SAD" class="logo"/>
+      </div>
+
+      <main class="main-content">
+        <div class="menu-citas">
+          <div class="menu-citas-header">Inventario</div>
+            <div class="menu-citas-opciones">
+              <div class="opcion"><span class="icono">📦</span><span class="texto"><a href="{% url 'administradores:inventario-registrar'%}" target="_self">Registrar</a></span></div>
+              <div class="opcion"><span class="icono">🔍</span><span class="texto">Consultar</span></div>
+              <div class="opcion"><span class="icono">⏰</span><span class="texto"><a href="{% url 'administradores:inventario-alertas' %}" target="_self">Alertas</span></a></div>
+              <div class="opcion"><span class="icono">🔄</span><span class="texto">Actualizar</span></div>
+            </div>
+        </div>
+
+        <div class="contenedor-reprogramar">
+          <!-- Nueva Hora -->
+          <h3 class="tituloovaladonegro2">ID Material</h3>
+          <input type="text" class="input-reprogramar" value="ID Producto" readonly>
+          <input type="text" class="input-reprogramar" value="ID Producto" readonly>
+          <input type="text" class="input-reprogramar" value="ID Producto" readonly>
+          <!-- Botón -->
+          <button class="btn-reprogramar">Aceptar</button>
+        </div>
+
+      </main>
+      <footer>
+        © 2025 Sistema de Agendamiento Dental S.A.D. Todos los derechos reservados.
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
