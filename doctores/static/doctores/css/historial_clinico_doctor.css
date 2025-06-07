@@ -5,9 +5,13 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-html, body {
+html,body {
   background-color: #f0f0f0;
   color: #333;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   height: 100%;
 }
 
@@ -77,7 +81,7 @@ html, body {
 .info-usuario p {
   font-size: 1.2rem;
   color: white;
-  margin-bottom: 150px;
+  margin-bottom: 10px;
 }
 
 .menu {
@@ -110,6 +114,62 @@ html, body {
   justify-content: space-between;
 }
 
+.consultar-citas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.titulo-citas {
+  background-color: black;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.btn-consultar-citas {
+  background-color: #00C2E5;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 0.6rem 1.8rem;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-consultar-citas:hover {
+  background-color: #00a9c7;
+}
+
+.main-content {
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 4rem;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.panel-formulario {
+  margin-top: 2rem;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -118,10 +178,10 @@ html, body {
 }
 
 .header h2 {
-  margin: 0 auto;
-  text-align: center;
-  font-weight: 700;
-  color: #00C2E5;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 700;
+    color: #00C2E5;
 }
 
 .titulo-ovalado {
@@ -136,37 +196,14 @@ html, body {
   gap: 0.5rem;
 }
 
-.logo {
-  height: 75px;
-}
-
-.main-content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.menu-citas {
-  background-color: #eaeaf0;
-  border-top: 3px solid #00C2E5;
-  width: 100%;
-  padding: 0;
-}
-
-.menu-citas-header {
-  background-color: #1a1a1a;
-  color: white;
-  padding: 1rem 0;
-  width: 100%;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin: 0;
+.perfil-contenedor-scrollable {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 2rem;
 }
 
 .boton-editar-container {
@@ -190,6 +227,42 @@ html, body {
   background-color: #00a9c7;
 }
 
+.perfil-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Inputs solo lectura */
+.perfil-formulario input[readonly] {
+  padding: 0.7rem;
+  border: none;
+  border-radius: 50px;
+  background-color: #f5f5f5;
+  font-size: 0.95rem;
+  color: #888;
+  outline: none;
+  cursor: not-allowed;
+  width: 100%;
+}
+
+.perfil-formulario input {
+  padding: 0.7rem 1rem;
+  border-radius: 30px;
+  border: none;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 2px #ccc;
+  font-size: 1rem;
+  width: 100%;
+  transition: box-shadow 0.3s;
+}
+
+.perfil-formulario input:focus {
+  outline: none;
+  box-shadow: 0 0 5px #00C2E5;
+}
+
+
 .titulo-ovalado3 {
   background-color: #000;
   color: #fff;
@@ -200,6 +273,10 @@ html, body {
   width: fit-content;
 }
 
+.logo {
+  height: 75px;
+}
+
 footer {
   margin-top: 2rem;
   text-align: center;
@@ -207,97 +284,22 @@ footer {
   color: #555;
 }
 
-.lista-historias {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 1rem;
+.menu-citas {
+  background-color: #eaeaf0;
+  border-top: 3px solid #00C2E5;
+  width: 100%;
+  padding: 0;
 }
 
-.historial-item {
+.menu-citas-header {
   background-color: #1a1a1a;
   color: white;
-  padding: 0.8rem 2rem;
-  border: none;
-  border-radius: 30px;
-  font-weight: bold;
-  font-size: 1rem;
-  text-align: left;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.historial-item:hover {
-  background-color: #333;
-}
-
-.formulario-dentista {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.formulario-dentista input,
-.formulario-dentista textarea {
-  padding: 0.75rem 1rem;
-  border-radius: 30px;
-  border: none;
-  background-color: white;
-  font-size: 1rem;
-  color: #333;
+  padding: 1rem 0;
   width: 100%;
-}
-
-.formulario-dentista textarea {
-  border-radius: 20px;
-  resize: vertical;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.nombre-paciente {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.iconos-paciente {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.icon-btn {
-  background: black;
-  color: white;
-  border: none;
-  padding: 0.4rem 0.8rem;
-  border-radius: 50px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.icon-btn:hover {
-  background: #333;
-}
-
-.menu-citas-opciones {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  padding: 1.5rem 0;
-}
-
-.opcion {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.opcion:hover {
-  transform: scale(1.1);
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0;
 }
 
 .icono {
@@ -306,14 +308,78 @@ footer {
   color: black;
 }
 
-/* Responsive */
+.texto {
+  font-size: 0.95rem;
+  color: black;
+}
+
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.formulario div {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  background-color: #000;
+  color: #fff;
+  padding: 0.4rem 1.2rem;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  width: fit-content;
+}
+
+.formulario input,
+.formulario select {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: none;
+  background-color: white;
+  font-size: 1rem;
+  color: #333;
+}
+
+.formulario input::placeholder {
+  color: #b0b0b0;
+}
+
+.formulario button {
+  padding: 1rem;
+  background-color: #00C2E5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/* Responsive para tablets y móviles */
 @media (max-width: 1024px) {
+  .formulario div {
+    flex: 1 1 100%;
+  }
+
+  .formulario button {
+    flex: 1 1 100%;
+  }
   .container {
     flex-direction: column;
   }
 
   .info-usuario {
-    margin-top: 1rem;
+        margin-top: 1rem;
   }
 
   .left-panel,
@@ -343,12 +409,37 @@ footer {
     font-size: 1.2rem;
   }
 
+  .menu-citas-opciones {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
   .header h2 {
     font-size: 1.3rem;
   }
+    .consultar-citas-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-  .btn-editar {
+  .btn-consultar-citas {
     width: 100%;
     text-align: center;
+  }
+
+  .titulo-citas {
+    font-size: 1rem;
+  }
+  .perfil-contenedor-scrollable {
+    max-height: 300px;
+    padding: 1rem;
+  }
+
+  .titulo-ovalado3 {
+    font-size: 0.85rem;
+  }
+
+  .perfil-formulario input {
+    font-size: 0.9rem;
   }
 }

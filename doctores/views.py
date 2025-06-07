@@ -7,3 +7,7 @@ def index(request):
 def historial_clinico_doctor(request):
     return render(request, 'doctores/historial_clinico_doctor.html')
 
+def historial_clinico_doctor_agregar(request):
+    return render(request, 'doctores/Crear.html')
+
+

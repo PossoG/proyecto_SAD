@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crear - SAD</title>
+    <link rel="stylesheet" href="{% static 'doctores/css/estilos.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-panel">
+        <nav class="navbar">
+          <a href="#">Home</a>
+          <a href="#">Testimonios</a>
+          <a href="#">Dentistas</a>
+          <a href="#">Sobre nosotros</a>
+        </nav>
+
+        <!-- Nuevo bloque centrado -->
+        <div class="info-usuario">
+          <h1><span class="titulo-ovalado2">Bienvenido al SAD</span></h1>
+          <img id="welcome-avatar" src="{% static 'bienvenido/img/default.png' %}" alt="Avatar">
+          <p>Doc. Juanito Suárez</p>
+        </div>
+
+        <!-- Menú -->
+        <ul class="menu">
+          <li><span class="icon">📊</span> Ver Resultados del Laboratorio</li>
+          <li><span class="icon">🏥</span> Historial Clínico Paciente</li>
+          <li><span class="icon">🔔</span> Notificaciones</li>
+          <li><span class="icon">👤</span> Perfil de Usuario</li>
+          <li class="cerrar"><span class="icon">❌</span> Cerrar sesión</li>
+        </ul>
+      </div>
+      <div class="right-panel">
+        <div class="header">
+          <h2><span class="titulo-ovalado">BIENVENIDO AL SAD</span></h2>
+          <img src="{% static 'bienvenido/img/logoSAD.png' %}" alt="Logo SAD" class="logo"/>
+        </div>
+        <div class="main-content">
+          <div class="menu-citas">
+            <div class="menu-citas-header">Menú de Citas Médicas</div>
+            <div class="menu-citas-opciones">
+              <div class="opcion"><span class="icono">➕</span><span class="texto"><a href="{% url 'doctores:historial_clinico_doctor_agregar' %}">Crear</a></span></div>
+              <div class="opcion">
+                <span class="icono">🔍</span
+                ><span class="texto">Consultar</span>
+              </div>
+              <div class="opcion">
+                <span class="icono">✍️</span><span class="texto">Editar</span>
+              </div>
+              <div class="opcion">
+                <span class="icono">🗃️</span><span class="texto">Archivar</span>
+              </div>
+            </div>
+          </div>
+          <div class="form-perfil">
+            <h3 class="seccion-titulo">DOCUMENTO PACIENTE</h3>
+            <br />
+            <input
+              class="input-lectura"
+              type="identification"
+              placeholder="Identificación del Paciente" /><br />
+
+            <h3 class="seccion-titulo">FECHA DE CONSULTA</h3>
+            <br />
+            <input
+              class="input-lectura"
+              type="date"
+              placeholder="Fecha de Consulta" /><br />
+
+            <h3 class="seccion-titulo">INFORMACIÓN HISTROIAL</h3>
+            <br />
+            <input
+              class="input-lectura"
+              type="text"
+              placeholder="Historial Clínico" /><br />
+
+            <button class="btn-perfil">GUARDAR</button>
+            <button class="btn-perfil">ATRÁS</button>
+          </div>
+        </div>
+        <footer>
+          © 2025 Sistema de Agendamiento Dental S.A.D. Todos los derechos
+          reservados.
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

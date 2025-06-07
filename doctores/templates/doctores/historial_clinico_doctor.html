@@ -35,33 +35,39 @@
         </ul>
       </div>
       <div class="right-panel">
-        <div class="header">
-            <h2><span class="titulo-ovalado">BIENVENIDO AL SAD</span></h2>
-            <img src="{% static 'bienvenido/img/logoSAD.png' %}" alt="Logo SAD" class="logo"/>
-        </div>
-        <div class="main-content">
-          <div class="menu-citas">
-            <div class="menu-citas-header">Menú de Dentista</div>
-        </div>
-          <div class="menu-citas-opciones">
-            <div class="opcion"><span class="icono">➕</span><span class="texto">Crear</span></div>
-            <div class="opcion"><span class="icono">🔍</span><span class="texto">Consultar</span></div>
-            <div class="opcion"><span class="icono">✏️</span><span class="texto">Editar</span></div>
-            <div class="opcion"><span class="icono">🗃️</span><span class="texto">Archivar</span></div>
-        </div>
-          <form class="formulario-dentista">
-            <h4 class="titulo-ovalado3">DOCUMENTO PACIENTE</h4>
-            <input type="text" placeholder="Identificación del Paciente">
-            <h4 class="titulo-ovalado3 nombre-paciente">
-              JUANITA RODRÍGUEZ
-              <span class="iconos-paciente">
-                <button type="button" class="icon-btn">👁️</button>
-                <button type="button" class="icon-btn">🖨️</button>
-              </span>
-            </h4>
-            <textarea rows="6" placeholder="Resumen clínico..."></textarea>
-          </form>
-        </div>
+  <div class="header">
+    <h2><span class="titulo-ovalado">BIENVENIDO AL SAD</span></h2>
+    <img src="{% static 'bienvenido/img/logoSAD.png' %}" alt="Logo SAD" class="logo"/>
+  </div>
+
+  <div class="main-content">
+    <div class="menu-citas">
+      <div class="menu-citas-header">Menú de Dentista</div>
+      <div class="menu-citas-opciones">
+        <div class="opcion"><span class="icono">➕</span><span class="texto"><a href="{% url 'doctores:historial_clinico_doctor_agregar' %}">Crear</a></span></div>
+        <div class="opcion"><span class="icono">🔍</span><span class="texto">Consultar</span></div>
+        <div class="opcion"><span class="icono">✏️</span><span class="texto">Editar</span></div>
+        <div class="opcion"><span class="icono">🗃️</span><span class="texto">Archivar</span></div>
+      </div>
+    </div>
+
+    <form class="formulario-dentista">
+      <h4 class="titulo-ovalado3">DOCUMENTO PACIENTE</h4>
+      <input type="text" placeholder="Identificación del Paciente">
+
+      <div class="nombre-paciente">
+        <h4 class="titulo-ovalado3">JUANITA RODRÍGUEZ</h4>
+        <span class="iconos-paciente">
+          <button type="button" class="icon-btn">👁️</button>
+          <button type="button" class="icon-btn">🖨️</button>
+        </span>
+      </div>
+
+      <textarea rows="6" placeholder="Resumen clínico..."></textarea>
+    </form>
+  </div>
+</div>
+
         <footer>
             © 2025 Sistema de Agendamiento Dental S.A.D. Todos los derechos reservados.
         </footer>

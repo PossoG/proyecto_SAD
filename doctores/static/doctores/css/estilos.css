@@ -1,0 +1,491 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+html,
+body {
+  background-color: #f0f0f0;
+  color: #333;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100%;
+}
+
+.left-panel {
+  background-color: #00c2e5;
+  color: white;
+  flex-basis: 50%;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.navbar {
+  display: flex;
+  gap: 1.5rem;
+  font-weight: bold;
+  font-size: 130%;
+  flex-wrap: wrap;
+  margin-left: 3rem;
+  margin-top: 5rem;
+  margin-bottom: 35px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.info-usuario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.titulo-ovalado2 {
+  background-color: white;
+  color: #00c2e5;
+  padding: 0.5rem 5rem;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#welcome-avatar {
+  width: 25vw;
+  height: 25vw;
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.info-usuario p {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.2rem;
+  padding: 5rem 0;
+  text-align: left;
+  align-items: flex-start;
+  margin-left: 10rem;
+}
+
+.menu li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: black;
+  justify-content: center;
+}
+
+.right-panel {
+  background-color: #eaeaf0;
+  flex: 1;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 4rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+.header h2 {
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 700;
+  color: #00c2e5;
+}
+
+.titulo-ovalado {
+  background-color: #00c2e5;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  height: 75px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.formulario div {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.formulario input,
+.formulario select {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: none;
+  background-color: white;
+  font-size: 1rem;
+  color: #333;
+}
+
+.formulario input::placeholder {
+  color: #b0b0b0;
+}
+
+.formulario button {
+  padding: 1rem;
+  background-color: #00c2e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+footer {
+  position: static;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: none;
+  color: #111c4f;
+  padding: 10px;
+  text-align: center;
+}
+
+.menu-citas {
+  background-color: #eaeaf0;
+  border-top: 3px solid #00c2e5;
+  border-bottom: 3px solid #7c4dff;
+  width: 100%;
+}
+
+.menu-citas-header {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.menu-citas-opciones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 0;
+}
+
+.opcion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.opcion:hover {
+  transform: scale(1.1);
+}
+
+.icono {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: black;
+}
+
+.texto {
+  font-size: 0.95rem;
+  color: black;
+}
+
+/* Responsive para tablets y móviles */
+@media (max-width: 1024px) {
+  .formulario div {
+    flex: 1 1 100%;
+  }
+
+  .formulario button {
+    flex: 1 1 100%;
+  }
+  .container {
+    flex-direction: column;
+  }
+
+  .info-usuario {
+    margin-top: 1rem;
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 100%;
+    flex-basis: auto;
+    padding: 1.5rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .titulo-ovalado2 {
+    padding: 0.5rem 3rem;
+    font-size: 1rem;
+  }
+
+  #welcome-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .menu li {
+    font-size: 1.2rem;
+  }
+
+  .menu-citas-opciones {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .header h2 {
+    font-size: 1.3rem;
+  }
+}
+
+.formulario-cita {
+  margin-top: 2rem;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.formulario-cita label {
+  font-weight: bold;
+  color: #000;
+}
+
+.formulario-cita input,
+.formulario-cita select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+
+.boton-agendar {
+  background-color: #0cc0df;
+  color: white;
+  font-weight: bold;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton-agendar:hover {
+  background-color: #089db6;
+}
+
+.tabla-resultados {
+  width: 120%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tabla-resultados thead {
+  background-color: #111c4f;
+  color: white;
+}
+
+.tabla-resultados th,
+.tabla-resultados td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabla-resultados input {
+  width: 90%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.btn-ver {
+  background-color: #00c2e5;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-ver:hover {
+  background-color: #089db6;
+}
+
+.notificaciones-container {
+  margin-top: 20px;
+}
+
+.notificaciones-container h3 {
+  background-color: #000;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.notificacion {
+  background-color: #444;
+  color: white;
+  border-radius: 20px;
+  padding: 12px;
+  margin-bottom: 10px;
+  text-align: left;
+  font-weight: normal;
+  line-height: 1.5;
+  padding-left: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-leer {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #00cfff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-leer:hover {
+  background-color: #009ec2;
+}
+
+.form-perfil {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  width: 120%;
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.seccion-titulo {
+  margin-bottom: 10px;
+  font-weight: bold;
+  background-color: #000;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.input-lectura {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #eee;
+  color: #666;
+  font-style: italic;
+}
+
+.btn-perfil {
+  background-color: #00cfff;
+  color: white;
+  border: none;
+  padding: 10px 3px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-perfil:hover {
+  background-color: #009ec2;
+}

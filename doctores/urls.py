@@ -9,6 +9,7 @@ urlpatterns = [
     # Al acceder a /doctores/ (prefijo definido en SAD/urls.py), Django llamará a views.index
     path('', views.index, name='index'),
     path('historial_clinico_doctor/', views.historial_clinico_doctor, name='historial_clinico_doctor'),
+    path('historial_clinico_doctor_agregar/', views.historial_clinico_doctor_agregar, name='historial_clinico_doctor_agregar'),
     
     
     
